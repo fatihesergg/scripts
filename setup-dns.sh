@@ -26,8 +26,8 @@ configure(){
     echo "server=::1#53000" >> /etc/dnsmasq.conf
     echo "server=127.0.0.1#53000" >> /etc/dnsmasq.conf
     sed -i "s/^# server_names = .*/server_names = ['dct-at1','dct-nl1','dnscrypt.pl','dnscry.pt-singapore-ipv4']/g" /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-    sed -i "s/^cache =/cache = false/g" /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-    sed -i "s/block_ipv6 =/block_ipv6 = true/g" /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+    sed -i "s/^cache =./cache = false/g" /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+    sed -i "s/block_ipv6 =./block_ipv6 = true/g" /etc/dnscrypt-proxy/dnscrypt-proxy.toml
     echo -e "nameserver ::1\nnameserver 127.0.0.1" > /etc/resolv.conf
 }
 
